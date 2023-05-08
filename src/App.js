@@ -14,11 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=", {
-        params: {
-          limit: 1000,
-        },
-      })
+      .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
       .then((response) => {
         this.setState({ cocktails: response.data.drinks });
       });
@@ -26,6 +22,7 @@ class App extends Component {
 
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
+    console.log(event.target.value);
   };
 
   render() {
@@ -33,6 +30,7 @@ class App extends Component {
     const filteredCocktails = cocktails.filter((cocktail) =>
       cocktail.strDrink.toLowerCase().startsWith(searchfield.toLowerCase())
     );
+    console.log(filteredCocktails);
     return (
       <div className="App">
         <h1>Cocktail Club</h1>
