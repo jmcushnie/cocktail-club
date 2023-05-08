@@ -1,15 +1,33 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #faebeb;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.App h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #e27396;
+}
+
+.search-box-container {
+  display: flex;
+  justify-content: center;
+}
+input {
+  text-align: center;
+  padding: 1rem;
+  width: 50%;
+  border: #e27396 solid 1px;
+  border-radius: 15px;
+  font-size: large;
 }
 
 .cocktail-list {
@@ -20,10 +38,20 @@ code {
 }
 
 .cocktail-card {
-  background-color: #f4c3c2;
+  background-color: white;
   padding: 1rem;
   border-radius: 15px;
+  border: #e27396 solid 1px;
   text-align: center;
   margin: 1rem;
   width: 25%;
+  box-shadow: 1px 2px 3px -1px rgba(179, 170, 170, 1);
+  cursor: pointer;
+  color: #c66c89;
+  transition: 0.4s;
+}
+
+.cocktail-card:hover {
+  background-color: #c66c89;
+  color: white;
 }
