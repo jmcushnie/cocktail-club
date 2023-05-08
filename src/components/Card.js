@@ -1,20 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React from "react";
 
-const Card = () => {
-  const [cocktail, setCocktail] = useState({});
-
-  useEffect(() => {
-    const fetchCocktail = async () => {
-      const response = await axios.get(
-        "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-      );
-      setCocktail(response.data.drinks[0]);
-    };
-
-    fetchCocktail();
-  }, []);
-
+const Card = ({ cocktail }) => {
   return (
     <div className="cocktail-card">
       <img
