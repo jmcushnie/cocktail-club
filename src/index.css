@@ -63,3 +63,28 @@ input {
 a {
   text-decoration: none;
 }
+
+.cocktail-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 15px;
+  border: #e27396 solid 1px;
+  color: #c66c89;
+  padding: 2rem;
+}
+
+.cocktail-details h2 {
+  font-size: 3rem;
+}
+
+.cocktail-details ul li {
+  list-style: none;
+}
+.cocktail-details p {
+  font-size: 1.5rem;
+}
