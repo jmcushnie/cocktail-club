@@ -17,6 +17,11 @@ code {
   color: #e27396;
 }
 
+.App p {
+  text-align: center;
+  font-size: 2rem;
+}
+
 .search-box-container {
   display: flex;
   justify-content: center;

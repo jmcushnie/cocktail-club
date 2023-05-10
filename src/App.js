@@ -48,10 +48,14 @@ class App extends Component {
             <Route
               path="/"
               element={
-                <CardList
-                  cocktails={filteredCocktails}
-                  onCardClick={this.handleCardClick}
-                />
+                filteredCocktails.length ? (
+                  <CardList
+                    cocktails={filteredCocktails}
+                    onCardClick={this.handleCardClick}
+                  />
+                ) : (
+                  <p>No cocktails found</p>
+                )
               }
             />
             <Route
