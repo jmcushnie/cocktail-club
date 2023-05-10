@@ -1,15 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Card = ({ cocktail }) => {
+const Card = ({ cocktail, onClick }) => {
   return (
-    <div className="cocktail-card">
-      <img
-        alt="cocktail"
-        src={cocktail.strDrinkThumb}
-        style={{ width: "150px", height: "150px" }}
-      />
-      <h2>{cocktail.strDrink}</h2>
-    </div>
+    <Link to="/cocktail-details">
+      <div className="cocktail-card" onClick={onClick}>
+        <img
+          alt="cocktail"
+          src={cocktail.strDrinkThumb}
+          style={{ width: "150px", height: "150px" }}
+        />
+        <h2>{cocktail.strDrink}</h2>
+      </div>
+    </Link>
   );
 };
 
