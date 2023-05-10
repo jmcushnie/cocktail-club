@@ -5,7 +5,9 @@ const BackButton = (selectedCocktail) => {
   const navigate = useNavigate();
 
   const handleBackButtonClick = () => {
+    // Navigate to the home page
     navigate("/");
+    // Reload the page to reset the search and display all cocktails
     window.location.reload();
   };
 

@@ -17,6 +17,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Fetch cocktail data from API when the component mounts
     axios
       .get("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
       .then((response) => {
@@ -24,15 +25,18 @@ class App extends Component {
       });
   }
 
+  // Event handler for search box value change
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
     console.log(event.target.value);
   };
 
+  // Event handler for card click
   handleCardClick = (cocktail) => {
     this.setState({ selectedCocktail: cocktail });
   };
 
+  // Event handler for back button click
   handleBackButtonClick = () => {
     this.setState({ selectedCocktail: null, searchfield: "" });
   };

@@ -1,6 +1,7 @@
 import React from "react";
 
 const CocktailDetails = ({ cocktail, searchValue }) => {
+  // Check if cocktail data exists
   if (!cocktail) {
     return <div>No Cockatil found</div>;
   }

@@ -5,7 +5,7 @@ import Card from "./Card";
 const CardList = ({ cocktails, onCardClick }) => {
   return (
     <div className="cocktail-list">
-      {cocktails &&
+      {cocktails && // Check if cocktails array exists and has elements
         cocktails.map((cocktail) => (
           <Link
             to="/cocktail-details"
