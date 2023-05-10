@@ -4,6 +4,7 @@ import SearchBox from "./components/SearchBox";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import CocktailDetails from "./components/CocktailDetails";
+import BackButton from "./components/BackButton";
 
 class App extends Component {
   constructor() {
@@ -32,8 +33,12 @@ class App extends Component {
     this.setState({ selectedCocktail: cocktail });
   };
 
+  handleBackButtonClick = () => {
+    this.setState({ selectedCocktail: null, searchfield: "" });
+  };
+
   render() {
-    const { cocktails, searchfield } = this.state;
+    const { cocktails, searchfield, selectedCocktail } = this.state;
     const filteredCocktails = cocktails.filter((cocktail) =>
       cocktail.strDrink.toLowerCase().startsWith(searchfield.toLowerCase())
     );
@@ -43,7 +48,12 @@ class App extends Component {
       <Router>
         <div className="App">
           <h1>Cocktail Club</h1>
-          <SearchBox searchChange={this.onSearchChange} />
+
+          {selectedCocktail ? (
+            <BackButton onClick={this.handleBackButtonClick} />
+          ) : (
+            <SearchBox searchChange={this.onSearchChange} />
+          )}
           <Routes>
             <Route
               path="/"
